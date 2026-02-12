@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluxer.py"
+version = "0.1.0"
+description = "A Python wrapper for the Fluxer API"
+readme = {file = "README.md", content-type = "text/markdown"}
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Emil" },
+]
+keywords = ["fluxer", "api", "chat", "bot", "websocket"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Communications :: Chat",
+    "Framework :: AsyncIO",
+]
+dependencies = [
+    "aiohttp>=3.9.0,<4.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[project.urls]
+Homepage = "https://github.com/akarealemil/fluxer.py"
+Issues = "https://github.com/akarealemil/fluxer.py/issues"
+
+[tool.setuptools.packages.find]
+include = ["fluxer*"]
