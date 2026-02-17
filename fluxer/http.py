@@ -375,9 +375,7 @@ class HTTPClient:
             payload["embeds"] = embeds
         return await self.request(route, json=payload)
 
-    async def delete_message(
-        self, channel_id: int | str, message_id: int | str
-    ) -> None:
+    async def delete_message(self, channel_id: int | str, message_id: int | str) -> None:
         """DELETE /channels/{channel_id}/messages/{message_id}"""
         route = Route(
             "DELETE",
@@ -774,7 +772,7 @@ class HTTPClient:
 
         return await self.request(Route("PATCH", "/users/@me"), json=payload)
 
-    # Emojis
+    # -- Emojis --
     async def get_guild_emojis(self, guild_id: int | str) -> list[dict[str, Any]]:
         """GET /guilds/{guild_id}/emojis — Get all emojis for a guild.
 
@@ -785,9 +783,7 @@ class HTTPClient:
             Route("GET", "/guilds/{guild_id}/emojis", guild_id=guild_id)
         )
 
-    async def get_guild_emoji(
-        self, guild_id: int | str, emoji_id: int | str
-    ) -> dict[str, Any]:
+    async def get_guild_emoji(self, guild_id: int | str, emoji_id: int | str) -> dict[str, Any]:
         """GET /guilds/{guild_id}/emojis/{emoji_id} — Get a specific emoji.
 
         Returns:
@@ -1083,9 +1079,7 @@ class HTTPClient:
             reason=reason,
         )
 
-    async def delete_webhook_with_token(
-        self, webhook_id: int | str, token: str
-    ) -> None:
+    async def delete_webhook_with_token(self, webhook_id: int | str, token: str) -> None:
         """DELETE /webhooks/{webhook_id}/{token}"""
         await self.request(
             Route(
