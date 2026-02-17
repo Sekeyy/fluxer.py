@@ -372,3 +372,4 @@ class Bot(Client):
                         await handler(message)
                     except Exception:
                         log.exception("Error in command '%s'", cmd)
+                    break
